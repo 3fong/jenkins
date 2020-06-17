@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  jenkins:
+    build: .
+    image: dockerliu3/jenkins:2.234-centos7
+    container_name: jenkins
+    volumes:
+      - "/data_jenkins:/var/jenkins_home:rw"
+    ports:
+      - "2377:2376"
+      - "8086:8080"
+    privileged: true
